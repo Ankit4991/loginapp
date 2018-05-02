@@ -20,3 +20,12 @@
     </tr>
   <% end %>
 </table>
+<% if user_signed_in? %>
+  <li>
+  <%= button_to('Logout', destroy_user_session_path, method: :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+<% end %>
